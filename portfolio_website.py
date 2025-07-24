@@ -161,7 +161,7 @@ def project_card(title, desc, tech, bullets, link=None, linkText=None):
         <p>{desc}</p>
         <ul>{"".join(f"<li>{item}</li>" for item in bullets)}</ul>
         <p><b>Tech:</b> {tech}</p>
-        {f"<a href='{link}' target='_blank'><b>📎 {linkText}</b></a>" if link else ""}
+        {f"<a href='{link}' target='_blank'><b>{linkText}</b></a>" if link else ""}
     </div>
     """, unsafe_allow_html=True)
 
@@ -198,7 +198,7 @@ with st.container():
             "Daily tech news",
             "Smart quiz recommendations"
         ],
-        "https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html"
+        "https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html",
         "📥  Download APK"
     )
 
