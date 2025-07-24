@@ -154,14 +154,14 @@ with st.container():
 
 st.divider()
 #Projects
-def project_card(title, desc, tech, bullets, link=None):
+def project_card(title, desc, tech, bullets, link=None, linkText=None):
     st.markdown(f"""
     <div style='background-color:#fff; padding:20px; border-radius:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;'>
         <h4>{title}</h4>
         <p>{desc}</p>
         <ul>{"".join(f"<li>{item}</li>" for item in bullets)}</ul>
         <p><b>Tech:</b> {tech}</p>
-        {f"<a href='{link}' target='_blank'><b>📎 Documentation</b></a>" if link else ""}
+        {f"<a href='{link}' target='_blank'><b>📎 {linkText}</b></a>" if link else ""}
     </div>
     """, unsafe_allow_html=True)
 
@@ -176,7 +176,8 @@ with st.container():
             "Auto paper generation, timetable with Gemini API",
             "Real-time face recognition attendance"
         ],
-        "https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view?usp=sharing"
+        "https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view?usp=sharing",
+        "📄 Documentation"
     )
 
     project_card(
@@ -198,6 +199,7 @@ with st.container():
             "Smart quiz recommendations"
         ],
         "https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html"
+        "📥  Download APK"
     )
 
     project_card(
