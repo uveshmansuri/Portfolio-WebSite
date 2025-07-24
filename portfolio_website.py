@@ -1,9 +1,15 @@
 import streamlit as st
 import google.generativeai as genai
 
-api_key=st.secrets["GOOGLE_API_KEY"]
-genai.configure(api_key=api_key)
+#api_key=st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key="api_key")
 model = genai.GenerativeModel("gemini-2.5-flash-lite")
+
+st.set_page_config(
+    page_title="Uvesh Mansuri | Portfolio",
+    layout="wide",
+    initial_sidebar_state="auto"
+)
 
 col1, col2 = st.columns([2 ,1])
 with col1:
@@ -115,7 +121,7 @@ def skill_bar(label, value, color):
     st.markdown(f"""
     <div style='margin-bottom: 10px;'>
         <b>{label}</b>
-        <div style='background-color: #ddd; border-radius: 5px; height: 14px;'>
+        <div style='background-color: #ddd; border-radius: 5px; height: 10px;'>
             <div style='width: {value}%; background-color: {color}; height: 100%; border-radius: 5px;'></div>
         </div>
         <small>{value}%</small>
@@ -154,14 +160,14 @@ with st.container():
 
 st.divider()
 #Projects
-def project_card(title, desc, tech, bullets, link=None, linkText=None):
+def project_card(title, desc, tech, bullets, link=None, leading=None, linkText=None):
     st.markdown(f"""
     <div style='background-color:#fff; padding:20px; border-radius:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;'>
         <h4>{title}</h4>
         <p>{desc}</p>
         <ul>{"".join(f"<li>{item}</li>" for item in bullets)}</ul>
         <p><b>Tech:</b> {tech}</p>
-        {f"<a href='{link}' target='_blank'><b>{linkText}</b></a>" if link else ""}
+        {f"<b>{leading}<b><a href='{link}' target='_blank'><b>{linkText}</b></a>" if link else ""}
     </div>
     """, unsafe_allow_html=True)
 
@@ -177,7 +183,8 @@ with st.container():
             "Real-time face recognition attendance"
         ],
         "https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view?usp=sharing",
-        "📄 Documentation"
+        "📄",
+        "Documentation",
     )
 
     project_card(
@@ -199,7 +206,8 @@ with st.container():
             "Smart quiz recommendations"
         ],
         "https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html",
-        "📥  Download APK"
+        "📥",
+        "Download APK",
     )
 
     project_card(
@@ -209,19 +217,37 @@ with st.container():
         [
             "Face liveness classification",
             "Trained on 4750+ real/fake images"
-        ]
+        ],
+        # "https://google.com",
+        # "📥",
+        # "Download Model",
     )
 
 # Contact Section
 st.divider()
+# Optional CSS for subtle styling
+st.markdown("""
+    <style>
+    .contact-box {
+        background-color: #f9f9f9;
+        padding: 25px;
+        border-radius: 12px;
+        box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
+        margin-bottom: 20px;
+    }
+    .contact-label {
+        font-weight: bold;
+        color: #2E86C1;
+    }
+    </style>
+""", unsafe_allow_html=True)
 st.header("📞 Contact Me")
 with st.container():
     st.markdown("""
     <table style='width:100%;'>
-        <tr><th align='left'>Mobile No</th><td>+91 70469 12108</td></tr>
-        <tr><th align='left'>Email</th><td>uveshmansuri794@gmail.com</td></tr>
-        <tr><th align='left'>Address</th><td>Sheth Faliya Vadadla, Bharuch, Gujarat, 302015</td></tr>
-        <tr><th align='left'>GitHub</th><td><a href='https://github.com/uveshmansuri' target='_blank'>uveshmansuri</a></td></tr>
-        <tr><th align='left'>LinkedIn</th><td><a href='https://linkedin.com/in/uvesh-mansuri-87164625b' target='_blank'>Uvesh Mansuri</a></td></tr>
+        <tr><th align='left'>📧Email</th><td>uveshmansuri794@gmail.com</td></tr>
+        <tr><th align='left'>🏠Address</th><td>Sheth Faliya Vadadla, Bharuch, Gujarat, 302015</td></tr>
+        <tr><th align='left'>🐙GitHub</th><td><a href='https://github.com/uveshmansuri' target='_blank'>uveshmansuri</a></td></tr>
+        <tr><th align='left'>💼LinkedIn</th><td><a href='https://linkedin.com/in/uvesh-mansuri-87164625b' target='_blank'>Uvesh Mansuri</a></td></tr>
     </table>
     """, unsafe_allow_html=True)
