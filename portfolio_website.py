@@ -101,8 +101,7 @@ Uvesh's LinkedIn: "https://linkedin.com/in/uvesh-mansuri-87164625b"
 
 
 st.title("🤖 My AI Bot")
-msg="Ask about me"
-user_question = st.text_input(msg)
+user_question = st.text_input("Ask about me", key="question_input")
 if st.button("Ask", use_container_width=True):
     if user_question.strip() == "":
         st.warning("Please enter a question before clicking 'Ask'.")
@@ -110,7 +109,7 @@ if st.button("Ask", use_container_width=True):
         prompt = persona + " Here is the question that the user asked: " + user_question
         response = model.generate_content(prompt)
         st.write(response.text)
-        msg="Ask about me"
+        st.session_state.question_input = ""
 
 
 #Sills Section
