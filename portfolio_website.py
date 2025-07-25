@@ -23,8 +23,9 @@ st.divider()
 persona = """
 You are Uvesh AI bot.
 You help the people answer questions about yourself (i.e. Uvesh)
-Answer as if you are responding. do't answer in second or third person.
-If you do't know about they answer you can simply say "That's a Secret"
+Answer as if you are Uvesh speaking directly (use "I", "me", "my", etc.).
+If you don’t know the answer or someone ask about private details, simply say: "That's a secret."
+However, if someone asks unnecessary or abusive questions, respond politely but firmly. Do not say "That's a secret" in those cases—handle them appropriately with respect and confidence.
 Here is More info about Uvesh:
 
 Full Name: Uvesh Salim Mansuri
@@ -106,6 +107,8 @@ if st.button("Ask", use_container_width=True):
         response = model.generate_content(prompt)
         st.write(response.text)
 
+
+#Sills Section
 def colored_bar(label, value, color):
     st.markdown(f"""
     <div style="margin-bottom:10px;">
@@ -130,7 +133,7 @@ def skill_bar(label, value, color):
 
 st.divider()
 
-# Key Skills Section
+# Key Skills
 st.header("🧰 Key Skills")
 cols = st.columns(2)
 with cols[0]:
@@ -159,15 +162,19 @@ with st.container():
 
 
 st.divider()
+
 #Projects
-def project_card(title, desc, tech, bullets, link=None, leading=None, linkText=None):
+def project_card(title, desc, tech, bullets, git_repo=None, git_text=None, link=None, leading=None, link_text=None):
+    git_html = f"<p><b><a href='{git_repo}' target='_blank'>{git_text}</a></b></p>" if git_repo and git_text else "<p></p>"
+    link_html = f"<p><b>{leading}</b> <a href='{link}' target='_blank'><b>{link_text}</b></a></p>" if link and link_text else " "
     st.markdown(f"""
     <div style='background-color:#fff; padding:20px; border-radius:10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); margin-bottom: 20px;'>
         <h4>{title}</h4>
         <p>{desc}</p>
         <ul>{"".join(f"<li>{item}</li>" for item in bullets)}</ul>
         <p><b>Tech:</b> {tech}</p>
-        {f"<b>{leading}<b><a href='{link}' target='_blank'><b>{linkText}</b></a>" if link else ""}
+        {git_html}
+        {link_html}
     </div>
     """, unsafe_allow_html=True)
 
@@ -182,9 +189,9 @@ with st.container():
             "Auto paper generation, timetable with Gemini API",
             "Real-time face recognition attendance"
         ],
-        "https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view?usp=sharing",
-        "📄",
-        "Documentation",
+        link="https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view?usp=sharing",
+        leading="📄",
+        link_text="Documentation",
     )
 
     project_card(
@@ -205,9 +212,9 @@ with st.container():
             "Daily tech news",
             "Smart quiz recommendations"
         ],
-        "https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html",
-        "📥",
-        "Download APK",
+        link="https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html",
+        leading="📥",
+        link_text="Download APK",
     )
 
     project_card(
@@ -218,9 +225,11 @@ with st.container():
             "Face liveness classification",
             "Trained on 4750+ real/fake images"
         ],
-        # "https://google.com",
-        # "📥",
-        # "Download Model",
+        "https://github.com/uveshmansuri/Liveness-Check.git",
+        "Instructions",
+        "https://drive.google.com/file/d/1gtc6ST5g9FKkT8hr6yaQ-ewUHmng7isP/view?usp=sharing",
+        "📥",
+        "Download Model",
     )
 
 # Contact Section
