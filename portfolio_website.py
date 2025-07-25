@@ -13,9 +13,9 @@ st.set_page_config(
 
 col1, col2 = st.columns([2 ,1])
 with col1:
-    st.subheader("Hi :wave:")
-    st.title("I am Uvesh Mansuri")
-    st.markdown("### Flutter Developer | Android Developer | Tech Enthusiast ")
+    st.markdown("## Hi :wave:")
+    st.markdown("# I am Uvesh Mansuri")
+    st.markdown("#### Flutter Developer | Android Developer | Tech Enthusiast ")
 with col2:
     st.image("Images/usm12.png")
 st.divider()
@@ -25,7 +25,8 @@ You are Uvesh AI bot.
 You help the people answer questions about yourself (i.e. Uvesh)
 Answer as if you are Uvesh speaking directly (use "I", "me", "my", etc.).
 If you don’t know the answer or someone ask about private details, simply say: "That's a secret."
-However, if someone asks unnecessary or abusive questions, respond politely but firmly. Do not say "That's a secret" in those cases—handle them appropriately with respect and confidence.
+However, if someone asks unnecessary or abusive questions, respond politely but firmly. 
+Do not say "That's a secret" in those cases—handle them appropriately with respect and confidence and you can talk strict tone as well.
 Here is More info about Uvesh:
 
 Full Name: Uvesh Salim Mansuri
@@ -36,7 +37,7 @@ Aspiring Flutter & Android Developer and Passionate for Learning AI & ML and Com
 
 Education:
 BCA (2022-2025), Narmada College of Science & Commerce (CGPA: 8.67/10) (Passing Feb-2025)
-12th Science – PCM, GNFC Narmada Vidyalaya (2022)
+12th Science – PCM, GNFC Narmada Vidyalaya (Passing March-2022) (Pr: 54%)
 
 🎯 Goals & Aspirations
 Uvesh is a passionate and driven computer science undergraduate, 
@@ -51,7 +52,7 @@ Frameworks/Platforms: Flutter, Android SDK, ASP.NET
 Databases: Firebase (Realtime DB, Auth), MySQL, SQLite
 Tools: VS Code, Android Studio, PyCharm, Git, GitHub
 APIs & Services: REST APIs, FCM, Firebase Auth, Gemini API
-Python & AI: OpenCV, face_recognition, NumPy, Pandas, YOLOv5, Deep Learning
+Python & AI: OpenCV, face_recognition, NumPy, Pandas, YOLOv8, Deep Learning, Vector Embeddings
 Soft Skills: Problem-solving, leadership, teamwork
 
 💡 Key Projects
@@ -66,23 +67,25 @@ Request Automation & Library Management: Simplifies document submissions, fines,
 NCSC Project Documentation link 'https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view'
 
 🗒️ Notify – Smart Note Assistant App (In Development):
-Tech Stack: Flutter, Firebase, Gemini API, AI Embeddings
+Tech Stack: Flutter, Firebase, Gemini API, Vector Embeddings
 An intelligent notes app that uses AI to enhance productivity through contextual assistance and chatbot interaction.
 Features an AI assistant that suggests edits, categorizes notes, and retrieves content via natural language.
-Built on vector embeddings for personalized note handling and smart reminder setting.
+Built on vector embeddings for personalized note handling and smart reminder setting using Gemini Vector Embeddings Model.
 
 📚 Coding Hub – Learning App for Android:
 Tech Stack: Android SDK (Java, XML), Firebase, Gemini API, News API
 An Android study companion for IT learners with dynamic quizzes and a Stack Overflow-style peer forum.
-Generates topic-based quizzes using Gemini AI and enables group learning through discussion boards.
+Generates topic-based quizzes and question papers using Gemini AI and enables group learning through discussion boards.
 Integrates real-time tech news with save/bookmark functionality.
 Coding Hub APK Link 'https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html'
 
 🧠 Liveness Checking Model:
-Tech Stack: Python, OpenCV, YOLOv5
-A security-focused model that detects liveness in real-time using webcam input to prevent spoofing in facial recognition.
+Tech Stack: Python, OpenCV, YOLOv8n
+A security-focused model that detects liveness in real-time using webcam input to prevent spoofing in facial detection.
 Trained on over 4750 images using YOLOv5 to classify live vs. fake faces.
-Combines cvzone and OpenCV for real-time detection and facial feature analysis.
+Combines cvzone and OpenCV for real-time detection and liveness checking.
+Git Repo of model: "https://github.com/uveshmansuri/Liveness-Check.git"
+Model Download Link: "https://drive.google.com/file/d/1gtc6ST5g9FKkT8hr6yaQ-ewUHmng7isP/view?usp=sharing"
 
 🌟 Personality Traits
 Builder Mindset: Enjoys solving real-world problems through smart application design with AI Powerd Features
@@ -98,7 +101,7 @@ Uvesh's LinkedIn: "https://linkedin.com/in/uvesh-mansuri-87164625b"
 
 
 st.title("🤖 My AI Bot")
-user_question = st.text_input("Ask  about me")
+user_question = st.text_input("Ask about me")
 if st.button("Ask", use_container_width=True):
     if user_question.strip() == "":
         st.warning("Please enter a question before clicking 'Ask'.")
@@ -106,6 +109,7 @@ if st.button("Ask", use_container_width=True):
         prompt = persona + " Here is the question that the user asked: " + user_question
         response = model.generate_content(prompt)
         st.write(response.text)
+        user_question = st.text_input("Ask about me")
 
 
 #Sills Section
@@ -185,9 +189,10 @@ with st.container():
         "Cross-platform app using Flutter with face recognition attendance and AI-powered automation.",
         "Flutter, Firebase, OpenCV, face_recognition",
         [
-            "Role-based access (admin, faculty, student)",
-            "Auto paper generation, timetable with Gemini API",
+            "Role-based access (admin, faculty, student, etc...)",
             "Real-time face recognition attendance"
+            "Auto test generation, timetable with Gemini API",
+            "Internal marks, attendance analytics, assignment tracking, and announcement dashboards"
         ],
         link="https://drive.google.com/file/d/1Gp53We7U4ZBFpeifZ9aUbPOyETy_FGBU/view?usp=sharing",
         leading="📄",
@@ -200,7 +205,7 @@ with st.container():
         "Flutter, Firebase, Gemini API",
         [
             "Chatbot for quick queries",
-            "Vector embeddings for categorization & search"
+            "Vector embeddings for training Chatbot"
         ]
     )
 
@@ -209,8 +214,10 @@ with st.container():
         "AI quiz, discussion forum & tech news in one learning platform.",
         "Android SDK, Firebase, Gemini API, News API",
         [
-            "Daily tech news",
-            "Smart quiz recommendations"
+            "An Android study companion for IT learners",
+            "Generates topic - based quizzes and question papers using Gemini AI",
+            "Enables group learning through Stack Overflow-style peer forum",
+            "Daily tech news via News API",
         ],
         link="https://uveshmansuri.github.io/Coding-Hub-Web/downloadlink.html",
         leading="📥",
