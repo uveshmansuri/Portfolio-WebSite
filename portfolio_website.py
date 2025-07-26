@@ -1,14 +1,16 @@
 import streamlit as st
 import google.generativeai as genai
 
-api_key=st.secrets["GOOGLE_API_KEY"]
-genai.configure(api_key=api_key)
+# api_key=st.secrets["GOOGLE_API_KEY"]
+genai.configure(api_key="api_key")
 model = genai.GenerativeModel("gemini-2.5-flash-lite")
 
+# Configure page
 st.set_page_config(
     page_title="Uvesh Mansuri | Portfolio",
+    page_icon="Images/usm.jpg",
     layout="wide",
-    initial_sidebar_state="auto"
+    initial_sidebar_state="auto",
 )
 
 col1, col2 = st.columns([2 ,1])
@@ -30,6 +32,8 @@ with col2:
     st.image("Images/usm12.png")
 st.divider()
 
+
+#AI Bot
 persona = """
 You are Uvesh Mansuri AI bot.
 You help the people answer questions about yourself (i.e. Uvesh Mansuri)
@@ -109,7 +113,6 @@ Uvesh's Email: uveshmansuri794@gmail.com
 Uvesh's GitHub: "https://github.com/uveshmansuri
 Uvesh's LinkedIn: "https://linkedin.com/in/uvesh-mansuri-87164625b"
 """
-
 
 st.title("🤖 My AI Bot")
 user_question = st.text_input("Ask about me", key="question_input")
