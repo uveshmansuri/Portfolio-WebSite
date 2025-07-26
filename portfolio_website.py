@@ -16,13 +16,23 @@ with col1:
     st.markdown("## Hi :wave:")
     st.markdown("# I am Uvesh Mansuri")
     st.markdown("#### Flutter Developer | Android Developer | Tech Enthusiast ")
+    st.write(
+        """
+         I'm Uvesh Mansuri. I'm currently pursuing an MCA at Manipal University Jaipur, studying online. 
+         My passion lies in becoming a skilled Flutter and Android developer, and I'm constantly diving deeper into the exciting worlds of Artificial Intelligence and Machine Learning, especially in Computer Vision.
+         I'm completed my Bachelor of Computer Applications (BCA) at Narmada College of Science & Commerce also Before that, I completed my 12th grade in Science (PCM) from GNFC Narmada Vidyalaya.
+         \nMy main aspiration is to build impactful and intelligent applications that can make a real difference. 
+         I'm particularly interested in using technology for education, automating processes with AI, and improving administrative
+         systems for institutions like colleges and schools.I'm actively looking for opportunities to contribute my technical skills and grow as a developer.
+        """
+    )
 with col2:
     st.image("Images/usm12.png")
 st.divider()
 
 persona = """
-You are Uvesh AI bot.
-You help the people answer questions about yourself (i.e. Uvesh)
+You are Uvesh Mansuri AI bot.
+You help the people answer questions about yourself (i.e. Uvesh Mansuri)
 Answer as if you are Uvesh speaking directly (use "I", "me", "my", etc.).
 If you don’t know the answer or someone ask about private details, simply say: "That's a secret."
 However, if someone asks unnecessary or abusive questions, respond politely but firmly. 
@@ -36,11 +46,12 @@ Current Role: MCA Student at Manipal University Jaipur (Online Mode) |
 Aspiring Flutter & Android Developer and Passionate for Learning AI & ML and Computer Vision
 
 Education:
-BCA (2022-2025), Narmada College of Science & Commerce (CGPA: 8.67/10) (Passing Feb-2025)
-12th Science – PCM, GNFC Narmada Vidyalaya (Passing March-2022) (Pr: 54%)
+Currently Pursuing an MCA at Manipal University Jaipur (Online Mode)
+BCA (2022-2025), Narmada College of Science & Commerce (CGPA: 8.67/10) (Completed: Feb-2025)
+12th Science – PCM, GNFC Narmada Vidyalaya (Completed: March-2022) (Pr: 54%)
 
 🎯 Goals & Aspirations
-Uvesh is a passionate and driven computer science undergraduate, 
+Uvesh Mansuri is a passionate and driven computer science undergraduate, 
 aspiring to become a mobile app developer with expertise in Flutter, 
 Python, and full-stack application development. 
 He aims to build impactful, smart applications with real-world utility, especially in the domains of education, AI-based automation, and administration systems of Institutions & Organizations specially in Teaching like Collages and Schools. 
@@ -241,29 +252,51 @@ with st.container():
 
 # Contact Section
 st.divider()
-# Optional CSS for subtle styling
-st.markdown("""
-    <style>
-    .contact-box {
-        background-color: #f9f9f9;
-        padding: 25px;
-        border-radius: 12px;
-        box-shadow: 2px 4px 12px rgba(0, 0, 0, 0.05);
-        margin-bottom: 20px;
-    }
-    .contact-label {
-        font-weight: bold;
-        color: #2E86C1;
-    }
-    </style>
-""", unsafe_allow_html=True)
-st.header("📞 Contact Me")
+
+def contectcard(url,img_link,text):
+    st.markdown(f"""
+    <a href="{url}" target="_blank">
+            <img src="{img_link}" 
+                 alt="{text}" height="30" width="30"/>
+        </a>
+    """,unsafe_allow_html=True)
+
+st.header("📇 Contact Me")
 with st.container():
-    st.markdown("""
-    <table style='width:100%;'>
-        <tr><th align='left'>📧Email</th><td>uveshmansuri794@gmail.com</td></tr>
-        <tr><th align='left'>🏠Address</th><td>Sheth Faliya Vadadla, Bharuch, Gujarat, 302015</td></tr>
-        <tr><th align='left'>🐙GitHub</th><td><a href='https://github.com/uveshmansuri' target='_blank'>uveshmansuri</a></td></tr>
-        <tr><th align='left'>💼LinkedIn</th><td><a href='https://linkedin.com/in/uvesh-mansuri-87164625b' target='_blank'>Uvesh Mansuri</a></td></tr>
-    </table>
-    """, unsafe_allow_html=True)
+    col1,col2,col3 = st.columns([1,2,1])
+    with col1:
+        st.empty()
+    with col2:
+        st.markdown("#### 🏠 Sheth Faliya, Vadadla, Bharuch, Gujarat, 302015")
+    with col3:
+        st.empty()
+
+    # Create 3 columns for social links
+    col1, col2, col3, col4, col5 = st.columns(5)
+
+    with col1:
+        st.empty()
+
+    with col2:
+        contectcard(
+            "mailto:uveshmansuri794@gmail.com",
+            "https://img.icons8.com/color/48/000000/gmail--v1.png",
+            "Email",
+        )
+
+    with col3:
+        contectcard(
+            "https://github.com/uveshmansuri",
+            "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/github.svg",
+            "GitHub",
+        )
+
+    with col4:
+        contectcard(
+            "https://www.linkedin.com/in/uvesh-mansuri-87164625b",
+            "https://raw.githubusercontent.com/rahuldkjain/github-profile-readme-generator/master/src/images/icons/Social/linked-in-alt.svg",
+            "LinkedIn"
+        )
+
+    with col5:
+        st.empty()
