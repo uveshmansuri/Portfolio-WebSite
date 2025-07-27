@@ -22,7 +22,7 @@ with col1:
         """
          I'm Uvesh Mansuri. I'm currently pursuing an MCA at Manipal University Jaipur, studying online. 
          My passion lies in becoming a skilled Flutter and Android developer, and I'm constantly diving deeper into the exciting worlds of Artificial Intelligence and Machine Learning, especially in Computer Vision.
-         I'm completed my Bachelor of Computer Applications (BCA) at Narmada College of Science & Commerce also Before that, I completed my 12th grade in Science (PCM) from GNFC Narmada Vidyalaya.
+         I'm completed my Bachelor of Computer Applications (BCA) from Narmada College of Science & Commerce also Before that, I completed my 12th grade in Science (PCM) from GNFC Narmada Vidyalaya.
          \nMy main aspiration is to build impactful and intelligent applications that can make a real difference. 
          I'm particularly interested in using technology for education, automating processes with AI, and improving administrative
          systems for institutions like colleges and schools.I'm actively looking for opportunities to contribute my technical skills and grow as a developer.
