@@ -115,7 +115,7 @@ Uvesh's LinkedIn: "https://linkedin.com/in/uvesh-mansuri-87164625b"
 """
 
 st.title("🤖 My AI Bot")
-user_question = st.text_input("Ask about me", key="question_input")
+user_question = st.text_input("Ask about me")
 if st.button("Ask", use_container_width=True):
     if user_question.strip() == "":
         st.warning("Please enter a question before clicking 'Ask'.")
@@ -123,7 +123,6 @@ if st.button("Ask", use_container_width=True):
         prompt = persona + " Here is the question that the user asked: " + user_question
         response = model.generate_content(prompt)
         st.write(response.text)
-        st.session_state.question_input = ""
 
 
 #Sills Section
@@ -170,6 +169,7 @@ with st.container():
     <table style='width:100%;'>
         <tr><th align='left'>Programming Languages</th><td>Python, Java, Dart, JavaScript, C, C++, PHP, VB.NET, HTML & CSS</td></tr>
         <tr><th align='left'>Frameworks & Libraries</th><td>Android SDK, Flutter, YOLO, OpenCV, face_recognition, .NET</td></tr>
+        <tr><th align='left'>Database</th><td>MySQL,SQLite,Firebase Realtime Database, Firestore</td></tr>
         <tr><th align='left'>Technologies</th><td>WordPress (Basic), Firebase Auth, FCM, REST APIs</td></tr>
         <tr><th align='left'>AI & Machine Learning</th><td>Gemini API, Vector Embeddings, Computer Vision, Data Visualization</td></tr>
         <tr><th align='left'>Tools & Platforms</th><td>Git, GitHub, Colab, VS Code, Android Studio</td></tr>
