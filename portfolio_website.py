@@ -8,7 +8,7 @@ model = genai.GenerativeModel("gemini-2.5-flash-lite")
 # Configure page
 st.set_page_config(
     page_title="Uvesh Mansuri | Portfolio",
-    page_icon="Images/usm.jpg",
+    page_icon="Images/img11.jpg",
     layout="wide",
     initial_sidebar_state="auto",
 )
@@ -29,7 +29,7 @@ with col1:
         """
     )
 with col2:
-    st.image("Images/usm12.png")
+    st.image("Images/img11.png")
 st.divider()
 
 
@@ -302,4 +302,5 @@ with st.container():
         )
 
     with col5:
+
         st.empty()
